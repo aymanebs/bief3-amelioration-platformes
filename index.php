@@ -21,6 +21,6 @@ if(!isset($_SESSION['username'])){
     <?php
     echo$_SESSION['username'];
     ?>
-    
+    <a href="logout.php">Log out</a>
 </body>
 </html>
