@@ -3,7 +3,7 @@ $login=0;
 $invalid=0;
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    include 'connect.php';
+    require __DIR__ . '/connect.php';
 
     $username = $_POST['username'];
     $password = $_POST['password'];

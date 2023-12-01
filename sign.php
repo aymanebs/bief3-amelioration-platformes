@@ -3,10 +3,11 @@ $user=0;
 $succes=0;
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    include 'connect.php';
+    require __DIR__ . "/connect.php";
 
     $username = $_POST['username'];
     $password = $_POST['password'];
+    $password_confirmation=$_POST['password_confirmation'];
     $role = $_POST['role'];
     $name = $_POST['name'];
     $adress = $_POST['adress'];
@@ -19,10 +20,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if(! filter_var($email,FILTER_VALIDATE_EMAIL)){
         die('invalid email');
     }
-    if(strlen($_POST['password'])<4){
+    if(strlen($password)<4){
         die('Password must be at least 4 characters');
     }
-    if(! preg_match("/[a-z]/i",$_POST['password']))
+    if(! preg_match("/[a-z]/i",$password)){
+        die('Password must contain at least one letter');
+    }
+    if(! preg_match("/[0-9]/",$password)){
+        die('Password must contain at least one number');
+    }
+    if($password!== $password_confirmation){
+        die('Passwords dont match');
+    }
+    $password=password_hash($password,PASSWORD_DEFAULT);
+   
+
 
     $sql = "SELECT * FROM users WHERE username='$username';";
     $query = mysqli_query($connection, $sql);
@@ -104,6 +116,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control"   name="password" placeholder="Password *" value="" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control"   name="password_confirmation" placeholder="Confirm Password *" value="" />
                                 </div>
                                 <div class="form-group">
                                     <input input type="text" class="form-control"  name="role" placeholder="Role *" value="" />
