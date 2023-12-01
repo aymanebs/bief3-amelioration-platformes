@@ -12,6 +12,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $adress = $_POST['adress'];
     $phone = $_POST['phone'];
     $email = $_POST['email'];
+//    form validation
+    if(empty($username)){
+        die('name is required');
+    }
+    if(! filter_var($email,FILTER_VALIDATE_EMAIL)){
+        die('invalid email');
+    }
+    if(strlen($_POST['password'])<4){
+        die('Password must be at least 4 characters');
+    }
+    if(! preg_match("/[a-z]/i",$_POST['password']))
 
     $sql = "SELECT * FROM users WHERE username='$username';";
     $query = mysqli_query($connection, $sql);
