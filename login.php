@@ -11,6 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $sql = "SELECT * FROM users WHERE username='$username'and password='$password';";
     $query = mysqli_query($connection, $sql);
+    $row=mysqli_fetch_assoc($query);
 
     if ($query) {
         $num = mysqli_num_rows($query);
@@ -18,7 +19,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $login++;
             session_start();
             $_SESSION['username']=$username;
-            header('LOCATION:index.php');
+
+            if($row["role"]=="Client"){
+              header('LOCATION:client.php');
+            }
+            else if($row["role"]=="Developper"){
+              header('LOCATION:developper.php');
+            }
+            else{
+              header('LOCATION:admin.php');
+            }
+
         } 
         else{
             $invalid++;
