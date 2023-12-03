@@ -15,7 +15,7 @@ if(!isset($_SESSION['username'])){
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
     <link rel="stylesheet" href="/assets/index-style.css">
-    <title>Services</title>
+    <title>Customers</title>
     <!-- insert stylesheets here -->
 </head>
 <body>
@@ -72,7 +72,7 @@ if(!isset($_SESSION['username'])){
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="../customers/list.php">
+        <a class="nav-link" href="../cutomers/list.php">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
           <span class="ml-2">Customers</span>
         </a>
@@ -101,25 +101,27 @@ if(!isset($_SESSION['username'])){
 </nav>
 
 <h1 class="h2">Dashboard</h1>
-<a class="btn btn-secondary" href="./add.php" role="button" style="position: fixed;right:5%">ADD</a>
-<p>This is the services table list</p>
+<!-- <a class="btn btn-secondary" href="./add.php" role="button" style="position: fixed;right:5%">ADD</a> -->
+<p>This is the customers table list</p>
 
 
   
 <div class="row">
   <div class="col-12 col-xl-12 mb-4 mb-lg-0">
       <div class="card">
-          <h5 class="card-header">Services</h5>
+          <h5 class="card-header">Customers</h5>
           <div class="card-body">
               <div class="table-responsive">
                   <table class="table">
                       <thead>
                         <tr>
                           <th scope="col">id</th>
-                          <th scope="col">Libel</th>
-                          <th scope="col">Category</th>
-                          <th scope="col">Price</th>
-                          
+                          <th scope="col">Username</th>
+                          <th scope="col">Name</th>
+                          <th scope="col">Email</th>
+                          <th scope="col">Phone</th>
+                          <th scope="col">Adress</th>
+                          <th scope="col">Created_at</th>
                           <th scope="col">Action</th>
                           
                         </tr>
@@ -129,8 +131,9 @@ if(!isset($_SESSION['username'])){
                       
                         <?php
                           require __DIR__ . '/../../db/connect.php';
-                          $sql="SELECT *
-                          FROM services";
+                          $sql="SELECT id,username,name,email,phone,adress,created_at 
+                          FROM users
+                          WHERE role='Client' ";
                           $query=mysqli_query($connection,$sql);
                           while($row=mysqli_fetch_assoc($query)){
                            
@@ -138,9 +141,12 @@ if(!isset($_SESSION['username'])){
                            
                             <tr>
                             <td>$row[id]</td>
-                            <td>$row[libel]</td>
-                            <td>$row[category]</td>
-                            <td>$row[price]</td>
+                            <td>$row[username]</td>
+                            <td>$row[name]</td>
+                            <td>$row[email]</td>
+                            <td>$row[phone]</td>
+                            <td>$row[adress]</td>
+                            <td>$row[created_at]</td>
                             <td>
                                 <a href='edit.php?id=$row[id]'><i class='fas fa-edit btndit' style='cursor: pointer;'></i></a>
                                 <a href='delete.php?id=$row[id]'><i class='fas fa-trash-alt btndelete' style='cursor: pointer; padding-left: 20px;'></i></a>
