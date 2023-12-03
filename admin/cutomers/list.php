@@ -15,7 +15,7 @@ if(!isset($_SESSION['username'])){
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
     <link rel="stylesheet" href="/assets/index-style.css">
-    <title>Bootstrap 5 Simple Admin Dashboard</title>
+    <title>Customers</title>
     <!-- insert stylesheets here -->
 </head>
 <body>
@@ -72,9 +72,9 @@ if(!isset($_SESSION['username'])){
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/admin/list.php">
+        <a class="nav-link" href="../cutomers/list.php">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-          <span class="ml-2">Customers</span>
+          <span class="ml-2">services</span>
         </a>
       </li>
       <li class="nav-item">
@@ -99,117 +99,72 @@ if(!isset($_SESSION['username'])){
     <li class="breadcrumb-item active" aria-current="page">Overview</li>
   </ol>
 </nav>
+
 <h1 class="h2">Dashboard</h1>
-<p>This is the homepage of a simple admin interface which is part of a tutorial written on Themesberg</p>
-<div class="row my-4">
-  <div class="col-12 col-md-6 col-lg-3 mb-4 mb-lg-0">
-      <div class="card">
-          <h5 class="card-header">Customers</h5>
-          <div class="card-body">
-            <h5 class="card-title">345k</h5>
-            <p class="card-text">Feb 1 - Apr 1, United States</p>
-            <p class="card-text text-success">18.2% increase since last month</p>
-          </div>
-        </div>
-  </div>
-  <div class="col-12 col-md-6 mb-4 mb-lg-0 col-lg-3">
-      <div class="card">
-          <h5 class="card-header">Revenue</h5>
-          <div class="card-body">
-            <h5 class="card-title">$2.4k</h5>
-            <p class="card-text">Feb 1 - Apr 1, United States</p>
-            <p class="card-text text-success">4.6% increase since last month</p>
-          </div>
-        </div>
-  </div>
-  <div class="col-12 col-md-6 mb-4 mb-lg-0 col-lg-3">
-      <div class="card">
-          <h5 class="card-header">Purchases</h5>
-          <div class="card-body">
-            <h5 class="card-title">43</h5>
-            <p class="card-text">Feb 1 - Apr 1, United States</p>
-            <p class="card-text text-danger">2.6% decrease since last month</p>
-          </div>
-        </div>
-  </div>
-  <div class="col-12 col-md-6 mb-4 mb-lg-0 col-lg-3">
-      <div class="card">
-          <h5 class="card-header">Traffic</h5>
-          <div class="card-body">
-            <h5 class="card-title">64k</h5>
-            <p class="card-text">Feb 1 - Apr 1, United States</p>
-            <p class="card-text text-success">2.5% increase since last month</p>
-          </div>
-        </div>
-  </div>
-</div>
+<!-- <a class="btn btn-secondary" href="./add.php" role="button" style="position: fixed;right:5%">ADD</a> -->
+<p>This is the customers table list</p>
+
+
   
 <div class="row">
-  <div class="col-12 col-xl-8 mb-4 mb-lg-0">
+  <div class="col-12 col-xl-12 mb-4 mb-lg-0">
       <div class="card">
-          <h5 class="card-header">Latest transactions</h5>
+          <h5 class="card-header">Customers</h5>
           <div class="card-body">
               <div class="table-responsive">
                   <table class="table">
                       <thead>
                         <tr>
-                          <th scope="col">Order</th>
-                          <th scope="col">Product</th>
-                          <th scope="col">Customer</th>
-                          <th scope="col">Total</th>
-                          <th scope="col">Date</th>
-                          <th scope="col"></th>
+                          <th scope="col">id</th>
+                          <th scope="col">Username</th>
+                          <th scope="col">Name</th>
+                          <th scope="col">Email</th>
+                          <th scope="col">Phone</th>
+                          <th scope="col">Adress</th>
+                          <th scope="col">Created_at</th>
+                          <th scope="col">Action</th>
+                          
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
-                          <th scope="row">17371705</th>
-                          <td>Volt Premium Bootstrap 5 Dashboard</td>
-                          <td>johndoe@gmail.com</td>
-                          <td>€61.11</td>
-                          <td>Aug 31 2020</td>
-                          <td><a href="#" class="btn btn-sm btn-primary">View</a></td>
-                        </tr>
-                        <tr>
-                          <th scope="row">17370540</th>
-                          <td>Pixel Pro Premium Bootstrap UI Kit</td>
-                          <td>jacob.monroe@company.com</td>
-                          <td>$153.11</td>
-                          <td>Aug 28 2020</td>
-                          <td><a href="#" class="btn btn-sm btn-primary">View</a></td>
-                        </tr>
-                        <tr>
-                          <th scope="row">17371705</th>
-                          <td>Volt Premium Bootstrap 5 Dashboard</td>
-                          <td>johndoe@gmail.com</td>
-                          <td>€61.11</td>
-                          <td>Aug 31 2020</td>
-                          <td><a href="#" class="btn btn-sm btn-primary">View</a></td>
-                        </tr>
-                        <tr>
-                          <th scope="row">17370540</th>
-                          <td>Pixel Pro Premium Bootstrap UI Kit</td>
-                          <td>jacob.monroe@company.com</td>
-                          <td>$153.11</td>
-                          <td>Aug 28 2020</td>
-                          <td><a href="#" class="btn btn-sm btn-primary">View</a></td>
-                        </tr>
-                        <tr>
-                          <th scope="row">17371705</th>
-                          <td>Volt Premium Bootstrap 5 Dashboard</td>
-                          <td>johndoe@gmail.com</td>
-                          <td>€61.11</td>
-                          <td>Aug 31 2020</td>
-                          <td><a href="#" class="btn btn-sm btn-primary">View</a></td>
-                        </tr>
-                        <tr>
-                          <th scope="row">17370540</th>
-                          <td>Pixel Pro Premium Bootstrap UI Kit</td>
-                          <td>jacob.monroe@company.com</td>
-                          <td>$153.11</td>
-                          <td>Aug 28 2020</td>
-                          <td><a href="#" class="btn btn-sm btn-primary">View</a></td>
-                        </tr>
+                      
+                      
+                        <?php
+                          require __DIR__ . '/../../db/connect.php';
+                          $sql="SELECT id,username,name,email,phone,adress,created_at 
+                          FROM users
+                          WHERE role='Client' ";
+                          $query=mysqli_query($connection,$sql);
+                          while($row=mysqli_fetch_assoc($query)){
+                           
+                            echo"
+                           
+                            <tr>
+                            <td>$row[id]</td>
+                            <td>$row[username]</td>
+                            <td>$row[name]</td>
+                            <td>$row[email]</td>
+                            <td>$row[phone]</td>
+                            <td>$row[adress]</td>
+                            <td>$row[created_at]</td>
+                            <td>
+                                <a href='edit.php?id=$row[id]'><i class='fas fa-edit btndit' style='cursor: pointer;'></i></a>
+                                <a href='delete.php?id=$row[id]'><i class='fas fa-trash-alt btndelete' style='cursor: pointer; padding-left: 20px;'></i></a>
+                            </td>
+               
+                            
+                            
+                          </tr>";
+
+                          }
+
+
+                        
+                        
+                        
+                        ?>
+
+
                       </tbody>
                     </table>
               </div>
@@ -217,7 +172,7 @@ if(!isset($_SESSION['username'])){
           </div>
       </div>
   </div>
-  <div class="col-12 col-xl-4">
+  <!-- <div class="col-12 col-xl-4">
   <div class="card">
   <h5 class="card-header">Traffic last 6 months</h5>
   <div class="card-body">
@@ -225,7 +180,7 @@ if(!isset($_SESSION['username'])){
   </div>
 </div>
   </div>
-</div>
+</div> -->
 <footer class="pt-5 d-flex justify-content-between">
   <span>Copyright © 2019-2020 <a href="https://themesberg.com">Themesberg</a></span>
   <ul class="nav m-0">
@@ -247,7 +202,7 @@ if(!isset($_SESSION['username'])){
 
 
 
-      
+<script src="https://kit.fontawesome.com/b93ca603ed.js" crossorigin="anonymous"></script>    
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
