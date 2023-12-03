@@ -92,7 +92,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   <nav class="navbar navbar-light bg-light p-3">
   <div class="d-flex col-12 col-md-3 col-lg-2 mb-2 mb-lg-0 flex-wrap flex-md-nowrap justify-content-between">
       <a class="navbar-brand" href="#">
-          Simple Dashboard
+      <img src="/assets/logo.png" alt="" height="55px">
       </a>
       <button class="navbar-toggler d-md-none collapsed mb-3" type="button" data-toggle="collapse" data-target="#sidebar" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -103,11 +103,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   </div>
   <div class="col-12 col-md-5 col-lg-8 d-flex align-items-center justify-content-md-end mt-3 mt-md-0">
      
-      <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
-            Hello, John Doe
+      <div class="dropdown " >
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false" >
+            Hello
           </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" ">
             <li><a class="dropdown-item" href="#">Settings</a></li>
             <li><a class="dropdown-item" href="#">Messages</a></li>
             <li><a class="dropdown-item" href="#">Sign out</a></li>
@@ -126,8 +126,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <div class="col-md-3 register-left">
             <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
             <h3>Welcome</h3>
-            <p>You are 30 seconds away from earning your own money!</p>
-            <input type="submit" name="" value="Login"/><br/>
+            <p>You are 30 seconds away from making good deals!</p>
+            <button type="submit" class=" btnlogin w-100 fs-6" ><a href="/login.php" style="text-decoration:none" as>Login</a></button><br/>
         </div>
        
         <div class="col-md-9 register-right">
@@ -155,12 +155,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                     <input type="text" class="form-control"   name="password_confirmation" placeholder="Confirm Password *" value="" />
                                 </div>
                                 <div class="form-group">
-                                    <input input type="text" class="form-control"  name="role" placeholder="Role *" value="" />
+                                    <select class="form-control custom-select" name="role" >
+                                        <option value="Client">Client </option>
+                                        <option value="Developer">Developer </option>
+                                        <option value="Admin">Admin </option>
+                                    </select>
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control" name="name"  placeholder="Name *" value="" />
                                 </div>
-                                <div class="form-group">
+                                <!-- <div class="form-group">
                                     <div class="maxl">
                                         <label class="radio inline padding-right-10"> 
                                             <input type="radio" name="gender" value="male" checked>
@@ -171,7 +175,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                             <span>Female </span> 
                                         </label>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
@@ -281,8 +285,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
 
-
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>  
+<script src="https://kit.fontawesome.com/b93ca603ed.js" crossorigin="anonymous"></script> 
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
 </body>
 </html>

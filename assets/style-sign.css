@@ -110,3 +110,22 @@ body{
 	font-weight: 600;
 	width: 35%;
 }
+.btnlogin{
+	margin-top: 7%;
+	border: none;
+	border-radius: 12px;
+	padding: 2%;
+	background: #fff;
+	color: #0062cc;
+	font-weight: 600;
+	width: 35%;
+}
+.custom-select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('/assets/chevron-down-solid.svg'); 
+    background-position: right center;
+    background-repeat: no-repeat;
+    padding-right: 40px; 
+}

@@ -3,7 +3,7 @@ $login=0;
 $invalid=0;
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    require __DIR__ . '/connect.php';
+    require __DIR__ . '/db/connect.php';
 
     $username = $_POST['username'];
     $password = $_POST['password'];
@@ -23,11 +23,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             if($row["role"]=="Client"){
               header('LOCATION:client.php');
             }
-            else if($row["role"]=="Developper"){
+            else if($row["role"]=="Developer"){
               header('LOCATION:developer.php');
             }
             else{
-              header('LOCATION:admin.php');
+              header('LOCATION:/admin/customers/list.php');
             }
 
         } 
@@ -126,7 +126,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </form>
             
             <div class="row">
-                <small>Don't have account? <a href="#">Sign Up</a></small>
+                <small>Don't have account? <a href="/sign.php">Sign Up</a></small>
             </div>
       </div>
    </div> 
