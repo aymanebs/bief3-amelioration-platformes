@@ -107,7 +107,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
           <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false" >
             Hello
           </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" ">
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" >
             <li><a class="dropdown-item" href="#">Settings</a></li>
             <li><a class="dropdown-item" href="#">Messages</a></li>
             <li><a class="dropdown-item" href="#">Sign out</a></li>
@@ -127,7 +127,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
             <h3>Welcome</h3>
             <p>You are 30 seconds away from making good deals!</p>
-            <button type="submit" class=" btnlogin w-100 fs-6" ><a href="/login.php" style="text-decoration:none" as>Login</a></button><br/>
+            <a href="/login.php" class="btnlogin w-100 fs-6" style="text-decoration: none; display: block; text-align: center;">Login</a>
+<br/>
         </div>
        
         <div class="col-md-9 register-right">

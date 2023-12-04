@@ -9,13 +9,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $password = $_POST['password'];
     
 
-    $sql = "SELECT * FROM users WHERE username='$username'and password='$password';";
+    $sql = "SELECT * FROM users WHERE username='$username';";
     $query = mysqli_query($connection, $sql);
     $row=mysqli_fetch_assoc($query);
 
     if ($query) {
         $num = mysqli_num_rows($query);
-        if ($num > 0) {
+        if (password_verify($password,$row['password'])) {
             $login++;
             session_start();
             $_SESSION['username']=$username;
