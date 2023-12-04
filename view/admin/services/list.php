@@ -1,9 +1,4 @@
- <?php
-// session_start();
-// if(!isset($_SESSION['username'])){
-    
-// }
-// ?> 
+
 
 
 
@@ -15,7 +10,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
     <link rel="stylesheet" href="/assets/index-style.css">
-    <title>Customers</title>
+    <title>Services</title>
     <!-- insert stylesheets here -->
 </head>
 <body>
@@ -35,14 +30,13 @@
   <div class="col-12 col-md-5 col-lg-8 d-flex align-items-center justify-content-md-end mt-3 mt-md-0">
      
       <div class="dropdown">
-          
           <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
             Hello
           </button>
           <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <li><a class="dropdown-item" href="#">Settings</a></li>
             <li><a class="dropdown-item" href="#">Messages</a></li>
-            <li><a class="dropdown-item" href="/logout.php">Sign out</a></li>
+            <li><a class="dropdown-item" href="../../controller/auth/logout.php">Sign out</a></li>
           </ul>
         </div>
   </div>
@@ -73,7 +67,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="../customers/list.php">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
           <span class="ml-2">Customers</span>
         </a>
@@ -96,74 +90,42 @@
       <main class="col-md-9 ml-sm-auto col-lg-10 px-md-4 py-4">
           <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="#">Home</a></li>
+    <li class="breadcrumb-item"><a href="/logout.php">Home</a></li>
     <li class="breadcrumb-item active" aria-current="page">Overview</li>
   </ol>
 </nav>
 
 <h1 class="h2">Dashboard</h1>
-<!-- <a class="btn btn-secondary" href="./add.php" role="button" style="position: fixed;right:5%">ADD</a> -->
-<p>This is the customers table list</p>
+<a class="btn btn-secondary" href="./add.php" role="button" style="position: fixed;right:5%">ADD</a>
+<p>This is the services table list</p>
 
 
   
 <div class="row">
   <div class="col-12 col-xl-12 mb-4 mb-lg-0">
       <div class="card">
-          <h5 class="card-header">Customers</h5>
+          <h5 class="card-header">Services</h5>
           <div class="card-body">
               <div class="table-responsive">
                   <table class="table">
                       <thead>
                         <tr>
                           <th scope="col">id</th>
-                          <th scope="col">Username</th>
-                          <th scope="col">Name</th>
-                          <th scope="col">Email</th>
-                          <th scope="col">Phone</th>
-                          <th scope="col">Adress</th>
-                          <th scope="col">Created_at</th>
+                          <th scope="col">Libel</th>
+                          <th scope="col">Category</th>
+                          <th scope="col">Price</th>
+                          
                           <th scope="col">Action</th>
                           
                         </tr>
                       </thead>
                       <tbody>
                       
-                      
-                        <?php
-                          require __DIR__ . '/../../db/connect.php';
-                          $sql="SELECT id,username,name,email,phone,adress,created_at 
-                          FROM users
-                          WHERE role='Client' ";
-                          $query=mysqli_query($connection,$sql);
-                          while($row=mysqli_fetch_assoc($query)){
-                           
-                            echo"
-                           
-                            <tr>
-                            <td>$row[id]</td>
-                            <td>$row[username]</td>
-                            <td>$row[name]</td>
-                            <td>$row[email]</td>
-                            <td>$row[phone]</td>
-                            <td>$row[adress]</td>
-                            <td>$row[created_at]</td>
-                            <td>
-                                <a href='edit.php?id=$row[id]'><i class='fas fa-edit btndit' style='cursor: pointer;'></i></a>
-                                <a href='delete.php?id=$row[id]'><i class='fas fa-trash-alt btndelete' style='cursor: pointer; padding-left: 20px;'></i></a>
-                            </td>
-               
-                            
-                            
-                          </tr>";
+                      <?php
+                        require __DIR__ . '/../../../controller/admin/services/list.php';
 
-                          }
-
-
-                        
-                        
-                        
                         ?>
+                        
 
 
                       </tbody>

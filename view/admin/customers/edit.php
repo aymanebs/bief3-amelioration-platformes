@@ -1,45 +1,7 @@
-<?php 
-$succes="";
+<?php
+                        require __DIR__ . '/../../../controller/admin/customers/edit.php';
 
-// Affichage des informations dans les input formulaire
-    
-    if(isset($_GET["id"])){
-    require __DIR__ . "/../../db/connect.php";
-    $id=$_GET['id'];
-    $sql="SELECT id,username,name,email,phone,adress,role
-    FROM users
-    WHERE id='$id' ";
-    $query=mysqli_query($connection,$sql);
-    $row=mysqli_fetch_assoc($query);
-    $username = $row["username"];
-    $name = $row["name"];
-    $email = $row["email"];
-    $phone = $row["phone"];
-    $adress = $row["adress"];
-    $role = $row["role"];
-    
-    }
-    
- 
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $id= $_POST["id"];
-    $name = $_POST["name"];
-    $username = $_POST["username"];
-    $email = $_POST["email"];
-    $phone = $_POST["phone"];
-    $adress = $_POST["adress"];
-    $role = $_POST["role"];
-
-    $requete ="UPDATE users 
-    SET name='$name',username='$username',email='$email',phone='$phone',adress='$adress',role='$role'
-    WHERE id='$id' ";
-    $query=mysqli_query($connection,$requete);
-
-
-    header("location:list.php");
-
-}
-?>
+                        ?>
 
 
 <!DOCTYPE html>
@@ -50,20 +12,11 @@ $succes="";
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="/assets/style-sign.css">
     <link rel="stylesheet" href="/assets/index-style.css">
-    <title>Sign</title>
+    <title>Edit customers</title>
 </head>
 <body style=" background: -webkit-linear-gradient(left, #3931af, #00c6ff);">
-
-    <?php
-if($succes){
-    echo'<div class="alert alert-info" role="alert">
-    updated successfully
-  </div>';
-}
-?>
-    
-  <!-- navbar -->
-  <nav class="navbar navbar-light bg-light p-3">
+<!-- navbar -->
+<nav class="navbar navbar-light bg-light p-3">
   <div class="d-flex col-12 col-md-3 col-lg-2 mb-2 mb-lg-0 flex-wrap flex-md-nowrap justify-content-between">
       <a class="navbar-brand" href="#">
           <img src="/assets/logo.png" alt="" height="55px">
@@ -84,21 +37,15 @@ if($succes){
           <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <li><a class="dropdown-item" href="#">Settings</a></li>
             <li><a class="dropdown-item" href="#">Messages</a></li>
-            <li><a class="dropdown-item" href="/logout.php">Sign out</a></li>
+            <li><a class="dropdown-item" href="/controller/auth/logout.php">Sign out</a></li>
           </ul>
         </div>
   </div>
 </nav>
 <!-- navbar end -->
 
-
-
-
-
 <div class="container register">
     <div class="row">
-        
-       
         <div class="col-md-12 register-right">
             <!-- <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
                 <li class="nav-item">
@@ -110,21 +57,24 @@ if($succes){
             </ul> -->
             <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                    <h3 class="register-heading">Edit developer </h3>
+                    <h3 class="register-heading">Edit customer</h3>
             <form action="#" method="POST">  
                     <div class="row register-form">
                             <div class="col-md-6">
-                            <input type="hidden" name="id" value="<?php echo $id; ?>">
+                                <input type="hidden" name="id" value="<?php echo $id; ?>">
                                 <div class="form-group">
+                                    
                                     <input type="text" class="form-control"  name="username" placeholder="username *" value="<?php echo $username; ?>" />
-                                </div>
-                              
-                                <div class="form-group">
-                                    <input input type="text" class="form-control"  name="role" placeholder="Role *" value="<?php echo $role; ?>" />
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control" name="name"  placeholder="Name *" value="<?php echo $name; ?>" />
                                 </div>
+                               
+                                
+                                <div class="form-group">
+                                    <input input type="text" class="form-control"  name="role" placeholder="Role *" value="<?php echo $role; ?>" />
+                                </div>
+                               
                                 <div class="form-group">
                                     <div class="maxl">
                                         <label class="radio inline padding-right-10"> 

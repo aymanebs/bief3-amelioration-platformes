@@ -1,11 +1,3 @@
-<?php
-session_start();
-if(!isset($_SESSION['username'])){
-    
-}
-?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -41,7 +33,7 @@ if(!isset($_SESSION['username'])){
           <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <li><a class="dropdown-item" href="#">Settings</a></li>
             <li><a class="dropdown-item" href="#">Messages</a></li>
-            <li><a class="dropdown-item" href="/logout.php">Sign out</a></li>
+            <li><a class="dropdown-item" href="/controller/auth/logout.php">Sign out</a></li>
           </ul>
         </div>
   </div>
@@ -129,39 +121,9 @@ if(!isset($_SESSION['username'])){
                       <tbody>
                       
                       
-                        <?php
-                          require __DIR__ . '/../../db/connect.php';
-                          $sql="SELECT id,username,name,email,phone,adress,created_at 
-                          FROM users
-                          WHERE role='developper' ";
-                          $query=mysqli_query($connection,$sql);
-                          while($row=mysqli_fetch_assoc($query)){
-                           
-                            echo"
-                           
-                            <tr>
-                            <td>$row[id]</td>
-                            <td>$row[username]</td>
-                            <td>$row[name]</td>
-                            <td>$row[email]</td>
-                            <td>$row[phone]</td>
-                            <td>$row[adress]</td>
-                            <td>$row[created_at]</td>
-                            <td>
-                                <a href='edit.php?id=$row[id]'><i class='fas fa-edit btndit' style='cursor: pointer;'></i></a>
-                                <a href='delete.php?id=$row[id]'><i class='fas fa-trash-alt btndelete' style='cursor: pointer; padding-left: 20px;'></i></a>
-                            </td>
-               
-                            
-                            
-                          </tr>";
+                      <?php
+                        require __DIR__ . '/../../../controller/admin/developers/list.php';
 
-                          }
-
-
-                        
-                        
-                        
                         ?>
 
 
