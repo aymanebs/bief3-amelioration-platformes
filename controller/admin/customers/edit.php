@@ -5,12 +5,11 @@
     
     if(isset($_GET["id"])){
     require __DIR__ . "/../../../db/connect.php";
-    $id=$_GET['id'];
-    $sql="SELECT id,username,name,email,phone,adress,role
-    FROM users
-    WHERE id='$id' ";
-    $query=mysqli_query($connection,$sql);
-    $row=mysqli_fetch_assoc($query);
+    require __DIR__ . "/../../../model/customers/list.php";
+    require __DIR__ . "/../../../model/customers/edit.php";
+    
+    $id = $_GET["id"];
+    $row=mysqli_fetch_assoc(getCustomersById($id));
     $username = $row["username"];
     $name = $row["name"];
     $email = $row["email"];
@@ -34,9 +33,7 @@
     // SET name='$name',username='$username',email='$email',phone='$phone',adress='$adress',role='$role'
     // WHERE id='$id' ";
     // $query=mysqli_query($connection,$requete);
-    $stmt=mysqli_prepare($connection,"UPDATE users SET name=?,username=?,email=?,phone=?,adress=?,role=? WHERE id='$id' ");
-    mysqli_stmt_bind_param($stmt,'ssssss',$name,$username,$email,$phone,$adress,$role);
-    mysqli_stmt_execute($stmt);
+    updateCustomers($id, $name, $username, $email, $phone, $adress, $role);
 
 
     header("location:list.php");

@@ -1,6 +1,5 @@
 <?php
-$user=0;
-$succes=0;
+session_start();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     require __DIR__ . '/../../db/connect.php';
@@ -14,14 +13,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $phone = htmlspecialchars($_POST['phone']);
     $email = htmlspecialchars($_POST['email']);
 //   form validation
-    if(empty(trim($username))){
+
+
+    // if(empty(trim($username))){
         // die('name is required');
     //     echo'<div class="alert alert-info" role="alert">
     //     name is required
     //   </div>';
       
 
-    }
+    // }
     // var_dump($usename);
     // if(! filter_var($email,FILTER_VALIDATE_EMAIL)){
     //     die('invalid email');
@@ -48,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($query) {
         $num = mysqli_num_rows($query);
         if ($num > 0) {
-            $user++;
+            $_SESSION['alert'] = 'username_exists';
         } else {
             $sql = "INSERT INTO users (username, password, role, name, adress, phone, email)
                 VALUES ('$username', '$password', '$role','$name','$adress','$phone','$email')";
@@ -57,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
           
             if ($query) {
-                $succes++;
+                $_SESSION['alert'] = 'user_created';
             }
             else{
                 die(mysqli_error($connection));

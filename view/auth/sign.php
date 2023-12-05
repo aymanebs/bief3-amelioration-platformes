@@ -17,16 +17,18 @@ require __DIR__ . '/../../controller/auth/sign.php'
 <body style=" background: -webkit-linear-gradient(left, #3931af, #00c6ff);">
 
     <?php
-    // if($user){
-    //     echo' <div class="alert alert-danger" role="alert">
-    //     username already used
-    //   </div> ';
-    // }
-    // if($succes){
-    //     echo'<div class="alert alert-info" role="alert">
-    //     user created
-    //   </div>';
-    // }
+    if (isset($_SESSION['alert'])) {
+        if ($_SESSION['alert'] == 'username_exists') {
+            echo '<div class="alert alert-danger" role="alert">
+            Username already used
+            </div>';
+        } elseif ($_SESSION['alert'] == 'user_created') {
+            echo '<div class="alert alert-info" role="alert">
+            User created
+            </div>';
+        }
+        unset($_SESSION['alert']);
+    }
     ?>
     <!-- navbar -->
     <nav class="navbar navbar-light bg-light p-3">

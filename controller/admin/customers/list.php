@@ -5,11 +5,9 @@
 // }
 // 
                           require __DIR__ . '/../../../db/connect.php';
-                          $sql="SELECT id,username,name,email,phone,adress,created_at 
-                          FROM users
-                          WHERE role='Client' ";
-                          $query=mysqli_query($connection,$sql);
-                          while($row=mysqli_fetch_assoc($query)){
+                          require __DIR__ . '/../../../model/customers/list.php';
+                          $result=getCustomers();
+                          while($row=mysqli_fetch_assoc($result)){
                            
                             echo"
                            

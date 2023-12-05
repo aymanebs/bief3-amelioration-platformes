@@ -16,12 +16,12 @@ require __DIR__ . '/../../../controller/admin/customers/edit.php';
 </head>
 <body style=" background: -webkit-linear-gradient(left, #3931af, #00c6ff);">
 <?php  
-if($succes){
-    echo'<div class="alert alert-info" role="alert">
-    updated successfully
-  </div>';
-}
-?>
+// if($succes){
+//     echo'<div class="alert alert-info" role="alert">
+//     updated successfully
+//   </div>';
+// }
+// ?>
 <!-- navbar -->
 <nav class="navbar navbar-light bg-light p-3">
   <div class="d-flex col-12 col-md-3 col-lg-2 mb-2 mb-lg-0 flex-wrap flex-md-nowrap justify-content-between">

@@ -8,12 +8,11 @@ $succes="";
 
     if(isset($_GET["id"])){
     require __DIR__ . "/../../../db/connect.php";
+    require __DIR__ . '/../../../model/developers/list.php';
+    require __DIR__ . '/../../../model/developers/edit.php';
     $id=$_GET['id'];
-    $sql="SELECT id,username,name,email,phone,adress,role
-    FROM users
-    WHERE id='$id' ";
-    $query=mysqli_query($connection,$sql);
-    $row=mysqli_fetch_assoc($query);
+    $result=getDevelopersById($id);
+    $row=mysqli_fetch_assoc($result);
     $username = $row["username"];
     $name = $row["name"];
     $email = $row["email"];
@@ -32,14 +31,12 @@ $succes="";
     $phone = $_POST["phone"];
     $adress = $_POST["adress"];
     $role = $_POST["role"];
-
+    updateDevelopers($id,$name,$username,$email,$phone,$adress,$role);    
     // $requete ="UPDATE users 
     // SET name='$name',username='$username',email='$email',phone='$phone',adress='$adress',role='$role'
     // WHERE id='$id' ";
     // $query=mysqli_query($connection,$requete);
-    $stmt=mysqli_prepare($connection,"UPDATE users SET name=?,username=?,email=?,phone=?,adress=?,role=? WHERE id='$id' ");
-    mysqli_stmt_bind_param($stmt,'ssssss',$name,$username,$email,$phone,$adress,$role);
-    mysqli_stmt_execute($stmt);
+   
 
 
     header("location:list.php");
