@@ -14,24 +14,24 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $phone = $_POST['phone'];
     $email = $_POST['email'];
 //    form validation
-    if(empty($username)){
-        die('name is required');
-    }
-    if(! filter_var($email,FILTER_VALIDATE_EMAIL)){
-        die('invalid email');
-    }
-    if(strlen($password)<4){
-        die('Password must be at least 4 characters');
-    }
-    if(! preg_match("/[a-z]/i",$password)){
-        die('Password must contain at least one letter');
-    }
-    if(! preg_match("/[0-9]/",$password)){
-        die('Password must contain at least one number');
-    }
-    if($password!== $password_confirmation){
-        die('Passwords dont match');
-    }
+    // if(empty($username)){
+    //     die('name is required');
+    // }
+    // if(! filter_var($email,FILTER_VALIDATE_EMAIL)){
+    //     die('invalid email');
+    // }
+    // if(strlen($password)<4){
+    //     die('Password must be at least 4 characters');
+    // }
+    // if(! preg_match("/[a-z]/i",$password)){
+    //     die('Password must contain at least one letter');
+    // }
+    // if(! preg_match("/[0-9]/",$password)){
+    //     die('Password must contain at least one number');
+    // }
+    // if($password!== $password_confirmation){
+    //     die('Passwords dont match');
+    // }
     $password=password_hash($password,PASSWORD_DEFAULT);
    
 

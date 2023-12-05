@@ -8,23 +8,23 @@ require __DIR__ . '/../../controller/auth/sign.php'
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="/assets/style-sign.css">
+    <link rel="stylesheet" href="/assets/css/style-sign.css">
     <link rel="stylesheet" href="/assets/index-style.css">
     <title>Sign</title>
 </head>
 <body style=" background: -webkit-linear-gradient(left, #3931af, #00c6ff);">
 
     <?php
-    if($user){
-        echo' <div class="alert alert-danger" role="alert">
-        username already used
-      </div> ';
-    }
-    if($succes){
-        echo'<div class="alert alert-info" role="alert">
-        user created
-      </div>';
-    }
+    // if($user){
+    //     echo' <div class="alert alert-danger" role="alert">
+    //     username already used
+    //   </div> ';
+    // }
+    // if($succes){
+    //     echo'<div class="alert alert-info" role="alert">
+    //     user created
+    //   </div>';
+    // }
     ?>
   <!-- navbar -->
   <nav class="navbar navbar-light bg-light p-3">
@@ -81,17 +81,20 @@ require __DIR__ . '/../../controller/auth/sign.php'
             <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                     <h3 class="register-heading">Apply now</h3>
-            <form action="#" method="POST">  
+            <form action="#" method="POST" id="form">  
                     <div class="row register-form">
                             <div class="col-md-6">
-                                <div class="form-group">
-                                    <input type="text" class="form-control"  name="username" placeholder="username *" value="" />
+                                <div class="form-group  ">
+                                    <input type="text" class="form-control" id="username" name="username" placeholder="username *" value="" />
+                                    <small>Error message</small>
+                                </div>
+                                <div class="form-group ">
+                                    <input type="text" class="form-control"  id="password" name="password" placeholder="Password *" value="" />
+                                    <small>Error message</small>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control"   name="password" placeholder="Password *" value="" />
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" class="form-control"   name="password_confirmation" placeholder="Confirm Password *" value="" />
+                                    <input type="text" class="form-control" id="password2"  name="password_confirmation" placeholder="Confirm Password *" value="" />
+                                    <small>Error message</small>
                                 </div>
                                 <div class="form-group">
                                     <select class="form-control custom-select" name="role" >
@@ -101,30 +104,23 @@ require __DIR__ . '/../../controller/auth/sign.php'
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="name"  placeholder="Name *" value="" />
+                                    <input type="text" class="form-control" id="name" name="name"  placeholder="Name *" value="" />
+                                    <small>Error message</small>
                                 </div>
-                                <!-- <div class="form-group">
-                                    <div class="maxl">
-                                        <label class="radio inline padding-right-10"> 
-                                            <input type="radio" name="gender" value="male" checked>
-                                            <span> Male </span> 
-                                        </label>
-                                        <label class="radio inline"> 
-                                            <input type="radio" name="gender" value="female">
-                                            <span>Female </span> 
-                                        </label>
-                                    </div>
-                                </div> -->
+           
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input type="text" name="email" class="form-control" placeholder="Your Email  *" value="" />
+                                    <input type="text"  id="email"name="email" class="form-control" placeholder="Your Email  *" value="" />
+                                    <small>Error message</small>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text"  name="phone" class="form-control" placeholder="Your Phone *" value="" />
+                                    <input type="text" id="phone" name="phone" class="form-control" placeholder="Your Phone *" value="" />
+                                    <small>Error message</small>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text"  name="adress" class="form-control" placeholder="Your Adress *" value="" />
+                                    <input type="text" id="adress" name="adress" class="form-control" placeholder="Your Adress *" value="" />
+                                    <small>Error message</small>
                                 </div>
                                 <!-- <div class="form-group">
                                     <select class="form-control">
@@ -223,7 +219,113 @@ require __DIR__ . '/../../controller/auth/sign.php'
 </div>
 
 
+<script> 
+const form= document.getElementById('form');
+const username= document.getElementById('username');
+const password= document.getElementById('password');
+const password2= document.getElementById('password2');
+const name= document.getElementById('name');
+const email= document.getElementById('email');
+const phone= document.getElementById('phone');
+const adress= document.getElementById('adress');
 
+
+form.addEventListener("submit", function(event) {
+    event.preventDefault();
+    checkInputs();
+        
+    
+});
+function checkInputs(){
+let isValid = true;
+const usernameValue = username.value.trim();
+const passwordValue = password.value.trim();
+const password2Value = password2.value.trim();
+const nameValue = name.value.trim();
+const emailValue = email.value.trim();
+const phoneValue = phone.value.trim();
+const adressValue = adress.value.trim();
+if(usernameValue ==""){
+    setErrorFor(username,'Input required');
+    isValid = false;
+}
+else{
+    setSuccessFor(username);
+    
+}
+if(passwordValue ==""){
+    setErrorFor(password,'Input required');
+    isValid = false;
+}
+else{
+    setSuccessFor(password);
+    
+}
+if(password2Value ==""){
+    setErrorFor(password2,'Input required');
+    isValid = false;
+}else if(password2Value !== passwordValue){
+    setErrorFor(password2,'passwords dont match');
+    isValid = false;
+}
+else{
+    setSuccessFor(password2);
+    
+}
+if(nameValue ==""){
+    setErrorFor(name,'Input required');
+    isValid = false;
+}
+else{
+    setSuccessFor(name);
+    
+}
+if(emailValue ==""){
+    setErrorFor(email,'Input required');
+    isValid = false;
+}else if(!isEmail(emailValue)){
+    setErrorFor(email,'Email not valid');
+    isValid = false;
+}
+else{
+    setSuccessFor(email);
+    
+}
+if(phoneValue ==""){
+    setErrorFor(phone,'Input required');
+    isValid = false;
+}
+else{
+    setSuccessFor(phone);
+   
+}
+if(adressValue ==""){
+    setErrorFor(adress,'Input required');
+    isValid = false;
+}
+else{
+    setSuccessFor(adress);
+   
+}
+if (isValid) {
+        form.submit();
+    }
+}
+
+function setErrorFor(input,message){
+    const formGroup =input.parentElement; // .form-group
+    const small= formGroup.querySelector('small');
+    // error message inside small
+    small.innerText = message;
+    formGroup.className ='form-group error';
+}
+function setSuccessFor(input){
+    const formGroup =input.parentElement; // .form-group
+    formGroup.className ='form-group success';
+}
+function isEmail(email) {
+	return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
+}</script> 
 <script src="https://kit.fontawesome.com/b93ca603ed.js" crossorigin="anonymous"></script> 
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
