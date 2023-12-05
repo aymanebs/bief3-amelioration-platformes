@@ -5,18 +5,24 @@ $succes=0;
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     require __DIR__ . '/../../db/connect.php';
 
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    $password_confirmation=$_POST['password_confirmation'];
-    $role = $_POST['role'];
-    $name = $_POST['name'];
-    $adress = $_POST['adress'];
-    $phone = $_POST['phone'];
-    $email = $_POST['email'];
-//    form validation
-    // if(empty($username)){
-    //     die('name is required');
-    // }
+    $username =htmlspecialchars($_POST['username']);
+    $password = htmlspecialchars($_POST['password']);
+    $password_confirmation=htmlspecialchars($_POST['password_confirmation']);
+    $role = htmlspecialchars($_POST['role']);
+    $name = htmlspecialchars($_POST['name']);
+    $adress = htmlspecialchars($_POST['adress']);
+    $phone = htmlspecialchars($_POST['phone']);
+    $email = htmlspecialchars($_POST['email']);
+//   form validation
+    if(empty(trim($username))){
+        // die('name is required');
+    //     echo'<div class="alert alert-info" role="alert">
+    //     name is required
+    //   </div>';
+      
+
+    }
+    // var_dump($usename);
     // if(! filter_var($email,FILTER_VALIDATE_EMAIL)){
     //     die('invalid email');
     // }
@@ -60,4 +66,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
     }
+  
 ?>
