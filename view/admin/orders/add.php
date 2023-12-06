@@ -1,5 +1,5 @@
 <?php
-  require __DIR__ . '/../../../controller/admin/services/add.php';
+  require __DIR__ . '/../../../controller/admin/orders/add.php';
  ?>
 
 <!DOCTYPE html>
@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="/assets/css/style-sign.css">
     <link rel="stylesheet" href="/assets/index-style.css">
-    <title>Add service</title>
+    <title>Add order</title>
 </head>
 <body style=" background: -webkit-linear-gradient(left, #3931af, #00c6ff);">
 <?php  
@@ -56,19 +56,20 @@ if($succes){
      
             <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                    <h3 class="register-heading">Add service</h3>
+                    <h3 class="register-heading">Add order</h3>
             <form action="#" method="POST">  
                     <div class="row register-form">
                             <div class="col-md-8">
                                 <div class="form-group">
-                                    <input type="text" class="form-control"  name="libel" placeholder="libel *" value="" />
+                                    <input type="text" class="form-control"  name="service_id" placeholder="service_id *" value="" />
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control"   name="category" placeholder="category *" value="" />
+                                    <input type="text" class="form-control"   name="team_id" placeholder="team_id *" value="" />
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control"   name="price" placeholder="price *" value="" />
+                                    <input type="text" class="form-control"   name="user_id" placeholder="user_id *" value="" />
                                 </div>
+                                
                                 <input type="submit" class="btnRegister"  value="Submit"/>
                             </div>
                            

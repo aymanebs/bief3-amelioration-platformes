@@ -39,7 +39,7 @@ require __DIR__ . '/../../../controller/admin/customers/edit.php';
      
       <div class="dropdown">
           <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
-            Hello
+            Menu
           </button>
           <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <li><a class="dropdown-item" href="#">Settings</a></li>

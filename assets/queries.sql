@@ -25,3 +25,23 @@ CREATE TABLE teams(
 
 ALTER TABLE users
 ADD COLUMN role VARCHAR(100);
+
+CREATE TABLE orders(
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	order_date DATETIME DEFAULT CURRENT_TIMESTAMP,
+	service_id INT,
+	FOREIGN KEY(service_id) REFERENCES services(id) ON DELETE CASCADE,
+	team_id INT,
+	FOREIGN KEY(team_id) REFERENCES teams(id) ON DELETE CASCADE,
+	user_id INT,
+	FOREIGN KEY(user_id) REFERENCES users(id) ON DELETE CASCADE
+);
+
+
+-- insertion of teams table
+
+INSERT INTO teams (leader_id)
+VALUES(53) 
+SELECT id 
+FROM users 
+WHERE role = 'Developer';

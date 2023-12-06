@@ -28,7 +28,7 @@
      
       <div class="dropdown">
           <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
-            Hello
+            Menu
           </button>
           <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <li><a class="dropdown-item" href="#">Settings</a></li>
@@ -88,12 +88,12 @@
           <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="#">Home</a></li>
-    <li class="breadcrumb-item active" aria-current="page">Overview</li>
+    
   </ol>
 </nav>
 
-<h1 class="h2">Dashboard</h1>
-<a class="btn btn-secondary" href="./add.php" role="button" style="position: fixed;right:5%">ADD</a>
+<h1 class="h2">Developers</h1>
+
 <p>This is the developers table list</p>
 
 
@@ -144,7 +144,7 @@
   </div>
 </div> -->
 <footer class="pt-5 d-flex justify-content-between">
-  <span>Copyright © 2019-2020 <a href="https://themesberg.com">Themesberg</a></span>
+  
   <ul class="nav m-0">
       <li class="nav-item">
         <a class="nav-link text-secondary" aria-current="page" href="#">Privacy Policy</a>

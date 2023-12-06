@@ -1,5 +1,5 @@
 <?php
-  require __DIR__ . '/../../../controller/admin/services/edit.php';
+  require __DIR__ . '/../../../controller/admin/orders/edit.php';
  ?>
 
 
@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="/assets/css/style-sign.css">
     <link rel="stylesheet" href="/assets/index-style.css">
-    <title>Edit service</title>
+    <title>Edit Order</title>
 </head>
 <body style=" background: -webkit-linear-gradient(left, #3931af, #00c6ff);">
 <?php  
@@ -61,19 +61,19 @@ if($succes){
      
             <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                    <h3 class="register-heading">Edit service</h3>
+                    <h3 class="register-heading">Edit order</h3>
             <form action="#" method="POST">  
                     <div class="row register-form">
                             <div class="col-md-8">
                             <input type="hidden" name="id" value="<?php echo $id; ?>">
                                 <div class="form-group">
-                                    <input type="text" class="form-control"  name="libel" placeholder="libel *" value="<?php echo $libel; ?>" />
+                                    <input type="text" class="form-control"  name="service_id" placeholder="Service_id *" value="<?php echo $service_id; ?>" />
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control"   name="category" placeholder="category *" value="<?php echo $category; ?>" />
+                                    <input type="text" class="form-control"   name="team_id" placeholder="Team_id *" value="<?php echo $team_id; ?>" />
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control"   name="price" placeholder="price *" value="<?php echo $price; ?>" />
+                                    <input type="text" class="form-control"   name="user_id" placeholder="User_id *" value="<?php echo $user_id; ?>" />
                                 </div>
                                 <input type="submit" class="btnRegister"  value="Submit"/>
                             </div>
@@ -81,45 +81,7 @@ if($succes){
                         </div>
           </form>         
                 </div>
-                <!-- <div class="tab-pane fade show" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                    <h3  class="register-heading">Apply as a Hirer</h3>
-                        <div class="row register-form">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input type="text"  name="name"  placeholder="Name" value=""/>
-                                </div>
-                                <div class="form-group">
-                                    <input type="text"   name="adress" placeholder="Adress *" value="" />
-                                </div> 
-                                <div class="form-group">
-                                    <input type="email" name="email" placeholder="Email *" value="" />
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" name="phone"  class="form-control" placeholder="Phone *" value="" />
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input type="password" class="form-control" placeholder="Password *" value="" />
-                                </div>
-                                <div class="form-group">
-                                    <input type="password" class="form-control" placeholder="Confirm Password *" value="" />
-                                </div>
-                                <div class="form-group">
-                                    <select class="form-control">
-                                        <option class="hidden"  selected disabled>Please select your Sequrity Question</option>
-                                        <option>What is your Birthdate?</option>
-                                        <option>What is Your old Phone Number</option>
-                                        <option>What is your Pet Name?</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="`Answer *" value="" />
-                                </div>
-                            <input type="submit" class="btnRegister"  value="Register"/>
-                            </div>
-                        </div>
-                </div> -->
+
             </div>
         </div>
     </div>
