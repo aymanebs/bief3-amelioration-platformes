@@ -33,10 +33,16 @@
     // SET name='$name',username='$username',email='$email',phone='$phone',adress='$adress',role='$role'
     // WHERE id='$id' ";
     // $query=mysqli_query($connection,$requete);
-    updateCustomers($id, $name, $username, $email, $phone, $adress, $role);
+    // updateCustomers($id, $name, $username, $email, $phone, $adress, $role);
+    
+    if(updateCustomers($id, $name, $username, $email, $phone, $adress, $role)){
+        echo '<script>
+       alert("Updated successfully"); 
+       window.location.href = "../../../../view/admin/customers/list.php";
+       </script>';
+   }
 
-
-    header("location:list.php");
+    // header("location:list.php");
 
 }
 ?>

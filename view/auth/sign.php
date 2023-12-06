@@ -16,20 +16,6 @@ require __DIR__ . '/../../controller/auth/sign.php'
 
 <body style=" background: -webkit-linear-gradient(left, #3931af, #00c6ff);">
 
-    <?php
-    if (isset($_SESSION['alert'])) {
-        if ($_SESSION['alert'] == 'username_exists') {
-            echo '<div class="alert alert-danger" role="alert">
-            Username already used
-            </div>';
-        } elseif ($_SESSION['alert'] == 'user_created') {
-            echo '<div class="alert alert-info" role="alert">
-            User created
-            </div>';
-        }
-        unset($_SESSION['alert']);
-    }
-    ?>
     <!-- navbar -->
     <nav class="navbar navbar-light bg-light p-3">
         <div class="d-flex col-12 col-md-3 col-lg-2 mb-2 mb-lg-0 flex-wrap flex-md-nowrap justify-content-between">
@@ -59,6 +45,20 @@ require __DIR__ . '/../../controller/auth/sign.php'
     </nav>
     <!-- navbar end -->
 
+    <?php
+    if (isset($_SESSION['alert'])) {
+        if ($_SESSION['alert'] == 'username_exists') {
+            echo '<div class="alert alert-danger" role="alert">
+            Username already used
+            </div>';
+        } elseif ($_SESSION['alert'] == 'user_created') {
+            echo '<div class="alert alert-info" role="alert">
+            User created
+            </div>';
+        }
+        unset($_SESSION['alert']);
+    }
+    ?>
 
 
 

@@ -29,16 +29,14 @@ $succes="";
     
 
   
-    $update=updateOrder($id,$service_id,$team_id,$user_id);
-    if ($update) {
-        $succes++;
-        header("location:list.php");
-       }
-       else{
-           die(mysqli_error($connection));
-       }
-
+    if(updateOrder($id,$service_id,$team_id,$user_id)){
+    echo '<script>
+    alert("Updated successfully"); 
+    window.location.href = "../../../../view/admin/orders/list.php";
+    </script>';
+    }
+}
    
 
-}
+
 ?>

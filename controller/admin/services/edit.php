@@ -31,15 +31,15 @@ $succes="";
     // $requete ="UPDATE services 
     // SET libel='$libel',category='$category',price='$price'";
     // $query=mysqli_query($connection,$requete);
-    $update=updateServices($id,$libel,$category,$price);
-    if ($update) {
-        $succes++;
-        header("location:list.php");
-       }
-       else{
-           die(mysqli_error($connection));
-       }
+    if(updateServices($id,$libel,$category,$price)){
+        echo '<script>
+        alert("Updated successfully"); 
+        window.location.href = "../../../../view/admin/services/list.php";
+        </script>';
 
+
+    }
+   
    
 
 }

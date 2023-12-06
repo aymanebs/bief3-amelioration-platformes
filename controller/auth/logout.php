@@ -1,5 +1,10 @@
 <?php 
+require __DIR__ . '/../../db/connect.php';
+
 session_start();
+unset($_SESSION['username']);  
+session_unset();
 session_destroy();
-header('LOCATION:../../../view/auth/login.php');
+header('Location:../../../view/auth/login.php');
+exit();
 ?>

@@ -73,7 +73,7 @@ if($succes){
                                     <input type="text" class="form-control"   name="team_id" placeholder="Team_id *" value="<?php echo $team_id; ?>" />
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control"   name="user_id" placeholder="User_id *" value="<?php echo $user_id; ?>" />
+                                    <input type="text" class="form-control"   name="user_id" placeholder="Developer_id *" value="<?php echo $user_id; ?>" />
                                 </div>
                                 <input type="submit" class="btnRegister"  value="Submit"/>
                             </div>

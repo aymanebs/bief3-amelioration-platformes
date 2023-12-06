@@ -31,15 +31,21 @@ $succes="";
     $phone = $_POST["phone"];
     $adress = $_POST["adress"];
     $role = $_POST["role"];
-    updateDevelopers($id,$name,$username,$email,$phone,$adress,$role);    
+     
     // $requete ="UPDATE users 
     // SET name='$name',username='$username',email='$email',phone='$phone',adress='$adress',role='$role'
     // WHERE id='$id' ";
     // $query=mysqli_query($connection,$requete);
    
+    
+    if(updateDevelopers($id, $name, $username, $email, $phone, $adress, $role)){
+        echo '<script>
+       alert("Updated successfully"); 
+       window.location.href = "../../../../view/admin/developers/list.php";
+       </script>';
+   }
 
-
-    header("location:list.php");
+    // header("location:list.php");
 
 }
 ?>
