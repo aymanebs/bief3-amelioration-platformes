@@ -1,4 +1,5 @@
 <?php
+// session_start();
 require __DIR__ . '/../../controller/auth/sign.php'
 
 ?>
@@ -100,17 +101,18 @@ require __DIR__ . '/../../controller/auth/sign.php'
                                         <input type="text" class="form-control" id="password2" name="password_confirmation" placeholder="Confirm Password *" value="" />
                                         <small>Error message</small>
                                     </div>
+                                 
                                     <div class="form-group">
+                                        <input type="text" class="form-control" id="name" name="name" placeholder="Name *" value="" />
+                                        <small>Error message</small>
+                                    </div>
+                                    <!-- <div class="form-group">
                                         <select class="form-control custom-select" name="role">
                                             <option value="Client">Client </option>
                                             <option value="Developer">Developer </option>
                                             <option value="Admin">Admin </option>
                                         </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" id="name" name="name" placeholder="Name *" value="" />
-                                        <small>Error message</small>
-                                    </div>
+                                    </div> -->
 
                                 </div>
                                 <div class="col-md-6">

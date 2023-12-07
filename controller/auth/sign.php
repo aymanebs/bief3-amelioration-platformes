@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username =htmlspecialchars($_POST['username']);
     $password = htmlspecialchars($_POST['password']);
     $password_confirmation=htmlspecialchars($_POST['password_confirmation']);
-    $role = htmlspecialchars($_POST['role']);
+    // $role = htmlspecialchars($_POST['role']);
     $name = htmlspecialchars($_POST['name']);
     $adress = htmlspecialchars($_POST['adress']);
     $phone = htmlspecialchars($_POST['phone']);
@@ -52,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_SESSION['alert'] = 'username_exists';
         } else {
             $sql = "INSERT INTO users (username, password, role, name, adress, phone, email)
-                VALUES ('$username', '$password', '$role','$name','$adress','$phone','$email')";
+                VALUES ('$username', '$password', 'Client','$name','$adress','$phone','$email')";
 
             $query = mysqli_query($connection, $sql);
 

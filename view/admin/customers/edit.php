@@ -2,8 +2,6 @@
 require __DIR__ . '/../../../controller/admin/customers/edit.php';
 
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,6 +20,7 @@ require __DIR__ . '/../../../controller/admin/customers/edit.php';
 //   </div>';
 // }
 // ?>
+
 <!-- navbar -->
 <nav class="navbar navbar-light bg-light p-3">
   <div class="d-flex col-12 col-md-3 col-lg-2 mb-2 mb-lg-0 flex-wrap flex-md-nowrap justify-content-between">
@@ -121,89 +120,13 @@ require __DIR__ . '/../../../controller/admin/customers/edit.php';
                         </div>
           </form>         
                 </div>
-                <!-- <div class="tab-pane fade show" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                    <h3  class="register-heading">Apply as a Hirer</h3>
-                        <div class="row register-form">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input type="text"  name="name"  placeholder="Name" value=""/>
-                                </div>
-                                <div class="form-group">
-                                    <input type="text"   name="adress" placeholder="Adress *" value="" />
-                                </div> 
-                                <div class="form-group">
-                                    <input type="email" name="email" placeholder="Email *" value="" />
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" name="phone"  class="form-control" placeholder="Phone *" value="" />
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input type="password" class="form-control" placeholder="Password *" value="" />
-                                </div>
-                                <div class="form-group">
-                                    <input type="password" class="form-control" placeholder="Confirm Password *" value="" />
-                                </div>
-                                <div class="form-group">
-                                    <select class="form-control">
-                                        <option class="hidden"  selected disabled>Please select your Sequrity Question</option>
-                                        <option>What is your Birthdate?</option>
-                                        <option>What is Your old Phone Number</option>
-                                        <option>What is your Pet Name?</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="`Answer *" value="" />
-                                </div>
-                            <input type="submit" class="btnRegister"  value="Register"/>
-                            </div>
-                        </div>
-                </div> -->
+                
             </div>
         </div>
     </div>
 </div>
 
-<!-- <div class="container p-5">
-<form action="#" method="POST">
-
-  <div class="form-group">
-    <label >Username</label>
-    <input type="text"  placeholder="Login" name="username">
-  </div>
-  <div class="form-group">
-    <label >Password</label>
-    <input type="text"  placeholder="Password" name="password">
-  </div>
-  <div class="form-group">
-    <label >Role</label>
-    <input type="text"  placeholder="Role" name="role">
-  </div>
-  <div class="form-group">
-    <label >Name</label>
-    <input type="text"  placeholder="Name" name="name">
-  </div>
-  <div class="form-group">
-    <label >Adress</label>
-    <input type="text"  placeholder="Adress" name="adress">
-  </div>
-  <div class="form-group">
-    <label >Phone number</label>
-    <input type="text"  placeholder="Phone number" name="phone">
-  </div>
-  <div class="form-group">
-    <label >Email</label>
-    <input type="text"  placeholder="Email" name="email">
-  </div>
- 
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form> -->
 </div>
-
-
-
-
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>  
 </body>

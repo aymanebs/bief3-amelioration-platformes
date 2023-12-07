@@ -1,4 +1,4 @@
- 
+
  <!DOCTYPE html>
  <html lang="en">
 
@@ -23,9 +23,16 @@
          <span class="navbar-toggler-icon"></span>
        </button>
      </div>
-     <div class="col-12 col-md-4 col-lg-2">
-       <input class="form-control form-control-dark" type="text" placeholder="Search" aria-label="Search">
-     </div>
+     <form method="post">
+     <form method="post" action="your_action_url.php" class="form-inline">
+    <div class="input-group">
+        <input class="form-control form-control-dark" type="text" name="search" placeholder="Search" aria-label="Search">
+        <div class="input-group-append">
+            <button class="btn btn-dark" type="submit" name="submit">Search</button>
+        </div>
+    </div>
+</form>
+     </form>
      <div class="col-12 col-md-5 col-lg-8 d-flex align-items-center justify-content-md-end mt-3 mt-md-0">
 
        <div class="dropdown">
@@ -160,15 +167,6 @@
                </div>
              </div>
            </div>
-           <!-- <div class="col-12 col-xl-4">
-  <div class="card">
-  <h5 class="card-header">Traffic last 6 months</h5>
-  <div class="card-body">
-      <div id="traffic-chart"></div>
-  </div>
-</div>
-  </div>
-</div> -->
            <footer class="pt-5 d-flex justify-content-between">
              
              <ul class="nav m-0">
@@ -186,9 +184,6 @@
        </main>
      </div>
    </div>
-
-
-
 
    <script src="https://kit.fontawesome.com/b93ca603ed.js" crossorigin="anonymous"></script>
    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

@@ -1,1 +1,14 @@
 # bief3-amelioration-platformes
+
+Partie backend du site YourInterface
+
+## Description:
+Projet qui  comprend les emlements backend pour le contenu du site . Une base de données qui stocke   les informations sur les clients, les developeurs, les services de l'agence. Les tables incluent des clés primaires, des clés étrangères, et des informations essentielles pour garantir une gestion efficace des données. Une interface qui permet d afficher les d afficher les donnees et code Php qui permet a l administrateur de manipuler la base de donnée par des opérations CRUD.Un système d'authentification et gestion de roles
+
+## Technologies utilisées:
+    Draw.io
+    SQl
+    XAMPP
+    php
+    MySQLi
+    Js

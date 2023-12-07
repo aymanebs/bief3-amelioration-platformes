@@ -1,5 +1,5 @@
 <?php 
-
+// session_start();
 $succes=0;
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 require __DIR__ . '/../../../db/connect.php';

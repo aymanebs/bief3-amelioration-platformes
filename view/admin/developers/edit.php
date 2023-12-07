@@ -53,23 +53,12 @@ if($succes){
 </nav>
 <!-- navbar end -->
 
-
-
-
-
 <div class="container register">
     <div class="row">
         
        
         <div class="col-md-12 register-right">
-            <!-- <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
-                <li class="nav-item">
-                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Employee</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Hirer</a>
-                </li>
-            </ul> -->
+          
             <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                     <h3 class="register-heading">Edit developer </h3>
@@ -110,100 +99,19 @@ if($succes){
                                 <div class="form-group">
                                     <input type="text"  name="adress" class="form-control" placeholder="Your Adress *" value="<?php echo $adress; ?>" />
                                 </div>
-                                <!-- <div class="form-group">
-                                    <select class="form-control">
-                                        <option class="hidden"  selected disabled>Please select your Sequrity Question</option>
-                                        <option>What is your Birthdate?</option>
-                                        <option>What is Your old Phone Number</option>
-                                        <option>What is your Pet Name?</option>
-                                    </select>
-                                </div> -->
-                                <!-- <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Enter Your Answer *" value="" />
-                                </div> -->
+                          
                                 <input type="submit" class="btnRegister"  value="Submit"/>
                             </div>
                         </div>
           </form>         
                 </div>
-                <!-- <div class="tab-pane fade show" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                    <h3  class="register-heading">Apply as a Hirer</h3>
-                        <div class="row register-form">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input type="text"  name="name"  placeholder="Name" value=""/>
-                                </div>
-                                <div class="form-group">
-                                    <input type="text"   name="adress" placeholder="Adress *" value="" />
-                                </div> 
-                                <div class="form-group">
-                                    <input type="email" name="email" placeholder="Email *" value="" />
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" name="phone"  class="form-control" placeholder="Phone *" value="" />
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input type="password" class="form-control" placeholder="Password *" value="" />
-                                </div>
-                                <div class="form-group">
-                                    <input type="password" class="form-control" placeholder="Confirm Password *" value="" />
-                                </div>
-                                <div class="form-group">
-                                    <select class="form-control">
-                                        <option class="hidden"  selected disabled>Please select your Sequrity Question</option>
-                                        <option>What is your Birthdate?</option>
-                                        <option>What is Your old Phone Number</option>
-                                        <option>What is your Pet Name?</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="`Answer *" value="" />
-                                </div>
-                            <input type="submit" class="btnRegister"  value="Register"/>
-                            </div>
-                        </div>
-                </div> -->
+                
             </div>
         </div>
     </div>
 </div>
 
-<!-- <div class="container p-5">
-<form action="#" method="POST">
 
-  <div class="form-group">
-    <label >Username</label>
-    <input type="text"  placeholder="Login" name="username">
-  </div>
-  <div class="form-group">
-    <label >Password</label>
-    <input type="text"  placeholder="Password" name="password">
-  </div>
-  <div class="form-group">
-    <label >Role</label>
-    <input type="text"  placeholder="Role" name="role">
-  </div>
-  <div class="form-group">
-    <label >Name</label>
-    <input type="text"  placeholder="Name" name="name">
-  </div>
-  <div class="form-group">
-    <label >Adress</label>
-    <input type="text"  placeholder="Adress" name="adress">
-  </div>
-  <div class="form-group">
-    <label >Phone number</label>
-    <input type="text"  placeholder="Phone number" name="phone">
-  </div>
-  <div class="form-group">
-    <label >Email</label>
-    <input type="text"  placeholder="Email" name="email">
-  </div>
- 
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form> -->
 </div>
 
 

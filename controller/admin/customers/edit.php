@@ -1,5 +1,5 @@
 <?php 
-
+// session_start();
 
 // Affichage des informations dans les input formulaire
     
