@@ -50,10 +50,6 @@ if($succes){
 </nav>
 <!-- navbar end -->
 
-
-
-
-
 <div class="container register">
     <div class="row">
        

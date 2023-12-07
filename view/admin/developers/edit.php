@@ -1,8 +1,8 @@
 
 <?php
-                        require __DIR__ . '/../../../controller/admin/developers/edit.php';
+    require __DIR__ . '/../../../controller/admin/developers/edit.php';
 
-                        ?>
+ ?>
 
 <!DOCTYPE html>
 <html lang="en">

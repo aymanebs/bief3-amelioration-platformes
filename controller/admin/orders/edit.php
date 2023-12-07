@@ -1,9 +1,5 @@
 <?php 
-
-
 $succes="";
-
-
 // Affichage des informations dans les input formulaire
     
     if(isset($_GET["id"])){
@@ -16,7 +12,6 @@ $succes="";
     $service_id = $row["service_id"];
     $team_id = $row["team_id"];
     $user_id = $row["user_id"];
-    
     
     }
     
